@@ -32,6 +32,7 @@ public class UserController {
     @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
     @RequestMapping(value="", method=RequestMethod.POST)
     public String postUser(@RequestBody User user) {
+        System.out.println("create user" + user.getId());
         users.put(user.getId(), user);
         return "success";
     }
