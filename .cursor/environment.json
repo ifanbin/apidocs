@@ -5,11 +5,11 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-  "install": "mvn -B -DskipTests clean package",
+  "install": "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 mvn -B -DskipTests clean package",
   "terminals": [
     {
       "name": "app",
-      "command": "java -jar target/swaggerdocs-0.0.1-SNAPSHOT.jar",
+      "command": "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar target/swaggerdocs-0.0.1-SNAPSHOT.jar",
       "description": "Runs the Spring Boot application on http://localhost:8080 (Swagger UI at /swagger-ui.html)."
     }
   ],
