@@ -1,0 +1,22 @@
+{
+  "name": "swaggerdocs",
+  "user": "ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "install": "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 mvn -B -DskipTests clean package",
+  "terminals": [
+    {
+      "name": "app",
+      "command": "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar target/swaggerdocs-0.0.1-SNAPSHOT.jar",
+      "description": "Runs the Spring Boot application on http://localhost:8080 (Swagger UI at /swagger-ui.html)."
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 8080
+    }
+  ]
+}
